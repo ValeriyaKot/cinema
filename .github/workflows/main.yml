@@ -45,7 +45,3 @@ jobs:
         with:
           python-version: '3.8'
           architecture: 'x64'
-      - name: Run tests
-        run: coverage run src/tests.py
-      - name: Tests report
-        run: coverage report

@@ -17,3 +17,7 @@ class DirectorView(viewsets.ModelViewSet):
     queryset = Director.objects.all()
     serializer_class = serializers.DirectorSerializer
 
+
+class DirectorModelView(viewsets.ModelViewSet):
+    queryset = Director.objects.all()
+    serializer_class = serializers.DirectorSerializer

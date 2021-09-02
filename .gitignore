@@ -103,7 +103,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
+cinema-app/cinema/.env
 .venv
 env/
 venv/

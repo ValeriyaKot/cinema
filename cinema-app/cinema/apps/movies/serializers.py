@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from .models import Movie, Genre, Director
+from .models import Movie, Genre, Director, MovieSession
+from apps.rooms.serializers import RoomSerializer
 
 
 class DirectorSerializer(serializers.ModelSerializer):
@@ -20,4 +21,13 @@ class MovieSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Movie
+        fields = '__all__'
+
+
+class MovieSessionSerializer(serializers.ModelSerializer):
+    movie = MovieSerializer(read_only=True)
+    room = RoomSerializer(read_only=True)
+
+    class Meta:
+        model = MovieSession
         fields = '__all__'

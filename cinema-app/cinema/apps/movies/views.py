@@ -1,5 +1,5 @@
 from rest_framework import viewsets
-from .models import Director, Genre, Movie
+from .models import Director, Genre, Movie, MovieSession
 from . import serializers
 
 
@@ -16,3 +16,10 @@ class GenreView(viewsets.ModelViewSet):
 class DirectorView(viewsets.ModelViewSet):
     queryset = Director.objects.all()
     serializer_class = serializers.DirectorSerializer
+
+
+class MovieSessionsModelViewSet(viewsets.ModelViewSet):
+    queryset = MovieSession.objects.all()
+    serializer_class = serializers.MovieSessionSerializer
+
+    

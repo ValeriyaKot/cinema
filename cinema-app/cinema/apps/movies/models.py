@@ -1,4 +1,5 @@
 from django.db import models
+from apps.rooms.models import Room
 
 
 class Director(models.Model):
@@ -33,3 +34,4 @@ class MovieSession(models.Model):
     date = models.DateField()
     time = models.TimeField()
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE, related_name='movie_sessions')
+    room = models.ForeignKey(Room, on_delete=models.CASCADE, related_name='movie_sessions', default=1)
